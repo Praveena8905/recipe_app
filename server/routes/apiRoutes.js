@@ -7,14 +7,6 @@ const validations = require("./../utils/validations");
 ("use strict");
 
 function apiRoutes(app) {
-  app.get("/ping", function (req, res) {
-    return res.send("pong");
-  });
-
-  app.get("/", function (req, res) {
-    return res.send("Server is up and running.");
-  });
-  // user API's
   app
     .route("/user/register")
     .post(require("../services/user/userRegister").process);

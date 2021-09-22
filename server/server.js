@@ -8,6 +8,8 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const jwt = require("jsonwebtoken");
 const path = require("path");
+const swaggerUi = require("swagger-ui-express");
+const YAML = require("yamljs");
 const User = require("./models/user");
 const routes = require("./routes/apiRoutes.js");
 const appConfig = require("./appConfig").configuration;
@@ -16,6 +18,8 @@ const cors = require("cors");
 require("dotenv").config({
   path: path.join(__dirname, ".env"),
 });
+
+const swaggerDocument = YAML.load("./specs/api.yml");
 
 const app = express();
 app.use(cors());
@@ -52,6 +56,9 @@ app.use(
   })
 );
 
+// app.use("/api-docs", swaggerUi.serve);
+
+app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(async (req, res, next) => {
   if (req.headers["x-access-token"]) {
     try {

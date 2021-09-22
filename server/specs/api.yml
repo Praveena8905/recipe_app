@@ -8,7 +8,7 @@ info:
     email: chanduthedev@gmail.com
     url: www.chanduthedev.com
 servers:
-  - url: http://localhost:7788
+  - url: http://chrecipeserver.herokuapp.com/
 tags:
   - name: userAPI
   - name: recipeAPI
@@ -531,13 +531,20 @@ components:
         - image
         - ingredients
         - instructions
+        - userName
       properties:
         title:
           type: string
-          example: chanduthedev
+          example: chickenfry
         image:
           type: string
           example: base64 string
+        userName:
+          type: string
+          example: chanduthedev
+        email:
+          type: string
+          example: chanduthedev@gmail.com
         ingredients:
           type: array
           items:

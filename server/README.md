@@ -4,7 +4,8 @@
 
 ---
 
-Make sure that Mongo DB database is up and running
+Make sure that Mongo DB database is up and running.
+I deployed this server on [Heroku](http://chrecipeserver.herokuapp.com). You can directly integrate in your application if needed.
 
 1. Navigate to the `server` folder from the project root folder `recipe_app`
 2. Run `npm install` to install all dependencies
