@@ -8,11 +8,12 @@
 const chai = require("chai");
 const chaiHttp = require("chai-http");
 const respCodes = require("../../../responses/commonRespCodes");
+const appConfig = require("../../../appConfig").configuration;
 const expect = chai.expect;
 
 chai.use(chaiHttp);
 
-const appHost = "http://localhost:7788";
+const appHost = appConfig.testServer.host;
 const signUpEndPoint = "/user/login";
 
 describe("Login users", () => {

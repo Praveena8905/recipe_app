@@ -6,6 +6,7 @@
 module.exports = {
   configuration: {
     appServer: { host: "http://localhost", port: 7788 },
+    testServer: { host: "http://chrecipeserver.herokuapp.com" },
 
     mongoDB: {
       host: "mongodb://localhost",

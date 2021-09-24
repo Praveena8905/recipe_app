@@ -9,7 +9,7 @@
   "scripts": {
     "devStart": "nodemon server.js",
     "start": "node server.js",
-    "test": "mocha 'tests/completeTest.js' --timeout 1000"
+    "test": "mocha 'tests/completeTest.js' --timeout 100000"
   },
   "repository": {
     "type": "git",

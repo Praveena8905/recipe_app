@@ -265,7 +265,7 @@ describe("Utils test cases", function () {
 
   describe("validate title", function () {
     it("should return success when passed title", function () {
-      const result = validations.validateTitle("title");
+      const result = validations.validateTitle("title1");
       expect(result).to.be.an("object");
       expect(result).to.have.property("status");
       expect(result).to.have.property("code");
@@ -313,6 +313,41 @@ describe("Utils test cases", function () {
       expect(result.status).to.equal(commonErrorCodes.INVALID_TITLE.status);
       expect(result.code).to.equal(commonErrorCodes.INVALID_TITLE.code);
       expect(result.message).to.equal(commonErrorCodes.INVALID_TITLE.message);
+    });
+
+    it("should return lenght error when title lenght is < 6", function () {
+      const result = validations.validateTitle("test");
+      expect(result).to.be.an("object");
+      expect(result).to.have.property("status");
+      expect(result).to.have.property("code");
+      expect(result).to.have.property("message");
+      expect(result.status).to.equal(
+        commonErrorCodes.INVALID_RECIPE_TITLE_LENGTH.status
+      );
+      expect(result.code).to.equal(
+        commonErrorCodes.INVALID_RECIPE_TITLE_LENGTH.code
+      );
+      expect(result.message).to.equal(
+        commonErrorCodes.INVALID_RECIPE_TITLE_LENGTH.message
+      );
+    });
+    it("should return lenght error when title lenght is > 32", function () {
+      const result = validations.validateTitle(
+        "testtesttesttesttesttesttesttesttesttest"
+      );
+      expect(result).to.be.an("object");
+      expect(result).to.have.property("status");
+      expect(result).to.have.property("code");
+      expect(result).to.have.property("message");
+      expect(result.status).to.equal(
+        commonErrorCodes.INVALID_RECIPE_TITLE_LENGTH.status
+      );
+      expect(result.code).to.equal(
+        commonErrorCodes.INVALID_RECIPE_TITLE_LENGTH.code
+      );
+      expect(result.message).to.equal(
+        commonErrorCodes.INVALID_RECIPE_TITLE_LENGTH.message
+      );
     });
   });
 

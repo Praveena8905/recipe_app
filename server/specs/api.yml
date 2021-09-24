@@ -26,12 +26,16 @@ paths:
                 userName:
                   type: string
                   description: password of the user
+                  minLength: 6
+                  maxLength: 32
                 email:
                   type: string
                   description: email of the user
                 password:
                   type: string
                   description: password of the user
+                  minLength: 6
+                  maxLength: 32
 
       responses:
         201:
@@ -102,8 +106,12 @@ paths:
               properties:
                 userName:
                   type: string
+                  minLength: 6
+                  maxLength: 32
                 password:
                   type: string
+                  minLength: 6
+                  maxLength: 32
 
       responses:
         200:
@@ -536,12 +544,16 @@ components:
         title:
           type: string
           example: chickenfry
+          minLength: 6
+          maxLength: 32
         image:
           type: string
           example: base64 string
         userName:
           type: string
           example: chanduthedev
+          minLength: 6
+          maxLength: 32
         email:
           type: string
           example: chanduthedev@gmail.com
@@ -563,6 +575,8 @@ components:
       properties:
         name:
           type: string
+          minLength: 1
+          maxLength: 526
         amount:
           type: number
 
@@ -576,3 +590,5 @@ components:
           type: number
         stepDesc:
           type: string
+          minLength: 1
+          maxLength: 1024

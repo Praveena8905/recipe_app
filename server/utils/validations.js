@@ -149,6 +149,13 @@ function validateTitle(title) {
       message: commonErrorCodes.INVALID_TITLE.message,
     };
   }
+  if (title && (title.length < 6 || title.length > 32)) {
+    return {
+      status: commonErrorCodes.INVALID_RECIPE_TITLE_LENGTH.status,
+      code: commonErrorCodes.INVALID_RECIPE_TITLE_LENGTH.code,
+      message: commonErrorCodes.INVALID_RECIPE_TITLE_LENGTH.message,
+    };
+  }
   return commonErrorCodes.SUCCESS;
 }
 exports.validateTitle = validateTitle;

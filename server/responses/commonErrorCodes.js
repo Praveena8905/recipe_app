@@ -115,4 +115,9 @@ module.exports = {
     code: 40018,
     message: "User needs to login.",
   },
+  INVALID_RECIPE_TITLE_LENGTH: {
+    status: 400,
+    code: 40019,
+    message: "Password length should be betwen 6 and 32 letters.",
+  },
 };
