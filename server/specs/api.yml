@@ -8,7 +8,7 @@ info:
     email: chanduthedev@gmail.com
     url: www.chanduthedev.com
 servers:
-  - url: http://chrecipeserver.herokuapp.com/
+  - url: https://chrecipeserver.herokuapp.com/
 tags:
   - name: userAPI
   - name: recipeAPI

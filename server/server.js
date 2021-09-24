@@ -58,7 +58,7 @@ app.use(
 
 // app.use("/api-docs", swaggerUi.serve);
 
-app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use("/specs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(async (req, res, next) => {
   if (req.headers["x-access-token"]) {
     try {
@@ -90,6 +90,11 @@ app.use(async (req, res, next) => {
 });
 
 routes(app);
+
+app.use(express.static(path.join(__dirname, "public")));
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/index.html");
+});
 
 app.listen(PORT, () => {
   console.log("Server is listening on Port:", PORT);
