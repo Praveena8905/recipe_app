@@ -26,6 +26,7 @@ async function process(req, res) {
     if (recipeDetails) {
       let respData = {};
       respData["title"] = recipeDetails.title;
+      respData["userName"] = recipeDetails.user_name;
       respData["image"] = recipeDetails.image;
       respData["ingredients"] = recipeDetails.ingredients;
       respData["instructions"] = recipeDetails.instructions;

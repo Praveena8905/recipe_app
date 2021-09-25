@@ -22,6 +22,7 @@ function UpdateRecipe() {
   const [images, setImages] = useState([]);
   const [errMessage, setErrMessage] = useState("");
   const [titleErrMsg, setTitleErrMsg] = useState("");
+  const [recipeOwner, setRecipeOwner] = useState("");
   const maxNumber = 1;
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
@@ -67,6 +68,7 @@ function UpdateRecipe() {
       setExistingInstructions(respData.data.instructions);
       setRecipeImage(respData.data.image);
       setStepNum(respData.data.instructions.length + 1);
+      setRecipeOwner(respData.data.userName);
     } else {
       setRecipeTitle("");
       setIngredients([]);
@@ -109,6 +111,17 @@ function UpdateRecipe() {
         >
           Get Recipe Details
         </button>
+      </div>
+      <div className=" p-3">
+        <label
+          htmlFor="recipeOwnerLabel"
+          className="text-blue-900 font-sans text-xl"
+        >
+          Recipe Created By :
+        </label>
+        <label htmlFor="recipeOwnerValue" className=" text-smz">
+          {recipeOwner}
+        </label>
       </div>
       <div className=" p-3">
         <label

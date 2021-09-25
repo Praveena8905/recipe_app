@@ -8,6 +8,7 @@ import { getCommonHeaders } from "../utils/common";
 
 function ViewRecipe() {
   const [recipeName, setRecipeName] = useState("");
+  const [recipeCreatedBy, setRecipeCreatedBy] = useState("");
   const [recipeTitle, setRecipeTitle] = useState("");
   const [ingredients, setIngredients] = useState([]);
   const [instructions, setInstructions] = useState([]);
@@ -27,12 +28,14 @@ function ViewRecipe() {
     const respData = await viewRecipeService(recipeName, headers);
     setErrMessage(respData.message);
     setDelErrMessage("");
+    console.log(JSON.stringify(respData.data));
 
     if (respData.data) {
       setRecipeTitle(respData.data.title);
       setIngredients(respData.data.ingredients);
       setInstructions(respData.data.instructions);
       setRecipeImage(respData.data.image);
+      setRecipeCreatedBy(respData.data.userName);
     } else {
       setRecipeTitle("");
       setIngredients([]);
@@ -91,6 +94,12 @@ function ViewRecipe() {
         </button>
       </div>
       <div>
+        <div className="mt-3">
+          <label htmlFor="recipeCreatedVy">Recipe Created By:</label>
+          <label htmlFor="recipeOwner" className="ml-8">
+            {recipeCreatedBy}
+          </label>
+        </div>
         <div className="mt-3">
           <label htmlFor="recipeName">Recipe Name:</label>
           <label htmlFor="Biryani" className="ml-8">
