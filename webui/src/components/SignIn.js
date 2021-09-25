@@ -73,7 +73,7 @@ function SignIn() {
               aria-label="username"
               className=" border-2 border-gray-200 w-full h-7 px-2 text-xl font-light"
               onChange={(e) => {
-                if (e.target.value.length > 5) {
+                if (e.target.value.length > 5 && e.target.value.length < 33) {
                   setErrorList({
                     ...errorList,
                     isUserNameError: false,
@@ -83,7 +83,8 @@ function SignIn() {
                   setErrorList({
                     ...errorList,
                     isUserNameError: true,
-                    userNameErrorMsg: "User name should be minimum 6 letters.",
+                    userNameErrorMsg:
+                      "User name should be between 6  and 32 letters only.",
                   });
                 }
                 dispatch(getUserName(e.target.value));

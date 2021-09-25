@@ -25,11 +25,10 @@
   },
   "scripts": {
     "start": "npm run build && (cd server && npm install && npm start)",
-    "testStart": "craco start",
+    "devStart": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject",
-    "devStart": "nodemon node server.js"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

@@ -65,11 +65,13 @@ function ViewRecipe() {
             type="text"
             className=" border-2 border-gray-200 w-full h-7 px-2 text-xl font-light"
             onChange={(e) => {
-              if (e.target.value.length > 5) {
+              if (e.target.value.length > 5 && e.target.value.length < 33) {
                 // setRecipeName(e.target.value);
                 setErrMessage("");
               } else {
-                setErrMessage("Recipe title should be atleast 5 letters.");
+                setErrMessage(
+                  "Recipe title should be between 6 and 32 letters only."
+                );
               }
               setRecipeName(e.target.value);
             }}

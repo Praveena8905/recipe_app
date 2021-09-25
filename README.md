@@ -39,3 +39,5 @@ I deployed this server on [Heroku](http://chrecipeserver.herokuapp.com). You can
 1. Navigate to the `webui` folder from the project root folder `recipe_app`
 2. Run `npm install` to install all dependencies
 3. Run `npm start` to start Web App server
+
+You can test this app [here](http://chrecipewebui.herokuapp.com).
