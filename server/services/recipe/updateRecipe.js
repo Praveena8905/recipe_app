@@ -22,6 +22,12 @@ async function process(req, res) {
     }
     let recipeDetails = await Recipe.findOne({ title: inputTitle });
     if (recipeDetails) {
+      if (req.userDetails.userName !== recipeDetails.user_name) {
+        return res.status(401).json({
+          code: commonResponseCodes.UNAUTHORIZED_RECIPE_OPERATION.code,
+          message: commonResponseCodes.UNAUTHORIZED_RECIPE_OPERATION.message,
+        });
+      }
       let recipeDetailsToUpdate = {};
       const inputImage = req.body.image;
       if (inputImage) {

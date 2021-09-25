@@ -73,6 +73,10 @@ module.exports = {
     code: 60008,
     message: "Recipe details found in the DB",
   },
+  UNAUTHORIZED_RECIPE_OPERATION: {
+    code: 60005,
+    message: "You are not allowed to update this recipe details.",
+  },
   UNKNOWN_ERROR: {
     code: 99999,
     message: "Unknown exception",

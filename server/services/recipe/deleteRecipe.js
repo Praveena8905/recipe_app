@@ -20,6 +20,21 @@ async function process(req, res) {
         message: result["message"],
       });
     }
+    let recipeDetails = await Recipe.findOne({ title: inputTitle });
+    if (recipeDetails) {
+      if (req.userDetails.userName !== recipeDetails.user_name) {
+        return res.status(401).json({
+          code: commonResponseCodes.UNAUTHORIZED_RECIPE_OPERATION.code,
+          message: commonResponseCodes.UNAUTHORIZED_RECIPE_OPERATION.message,
+        });
+      }
+    } else {
+      return res.status(404).json({
+        code: commonResponseCodes.RECIPE_NOT_FOUND.code,
+        message: commonResponseCodes.RECIPE_NOT_FOUND.message,
+      });
+    }
+
     const recipe = await Recipe.findOneAndDelete({ title: req.params.title });
     if (recipe) {
       return res.status(200).json({
