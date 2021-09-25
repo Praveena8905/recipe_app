@@ -172,7 +172,7 @@ function CreateRecipe() {
               }
             }}
           >
-            Add
+            Add Instruction
           </button>
         </div>
       </div>
@@ -249,7 +249,7 @@ function CreateRecipe() {
             createRecipeRequest();
           }}
         >
-          Create Recipe app
+          Create New Recipe
         </button>
       </div>
       <div className="mt-5 flex justify-center ">
