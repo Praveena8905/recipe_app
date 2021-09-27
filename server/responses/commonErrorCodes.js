@@ -118,6 +118,6 @@ module.exports = {
   INVALID_RECIPE_TITLE_LENGTH: {
     status: 400,
     code: 40019,
-    message: "Password length should be betwen 6 and 32 letters.",
+    message: "Recipe title length should be betwen 6 and 32 letters only.",
   },
 };
